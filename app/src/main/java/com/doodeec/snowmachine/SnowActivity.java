@@ -33,7 +33,6 @@ public class SnowActivity extends ActionBarActivity {
             mFlakes.add(new SnowFlake((float) Math.random() * sizeX, (float) Math.random() * sizeY, (float) (3 + Math.random() * 2)));
             //tiny flakes
             mFlakes.add(new SnowFlake((float) Math.random() * sizeX, (float) Math.random() * sizeY, (float) (1 + Math.random() * 2)));
-            mFlakes.add(new SnowFlake((float) Math.random() * sizeX, (float) Math.random() * sizeY, (float) (1 + Math.random() * 2)));
         }
 
         snowWindow.setFlakes(mFlakes);

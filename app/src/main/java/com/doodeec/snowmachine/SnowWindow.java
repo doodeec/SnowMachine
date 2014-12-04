@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class SnowWindow extends View {
 
-    private static final int frequency = 1000 / 50;
+    private static final int frequency = 1000 / 40;
 
     private List<SnowFlake> mFlakes;
     private Handler mHandler = new Handler();

@@ -19,7 +19,7 @@ public class SnowFlake {
     public float opacity;
     public float radius;
     public float velocity;
-    public Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    public Paint paint = new Paint();
 
     // not waiting for GC to throw unused local variables
     private float moveDistance;
