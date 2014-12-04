@@ -11,7 +11,7 @@ import android.graphics.Shader;
  * SnowFlake class
  */
 public class SnowFlake {
-    public static final float GRAVITY = 0.4f;
+    public static final float GRAVITY = 0.5f;
 
     public float x;
     public float y;
@@ -20,6 +20,9 @@ public class SnowFlake {
     public float radius;
     public float velocity;
     public Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+    // not waiting for GC to throw unused local variables
+    private float moveDistance;
 
     public SnowFlake(float x, float y, float distance) {
         this.x = x;
@@ -39,10 +42,10 @@ public class SnowFlake {
     }
 
     public boolean moveFlake(long pastTime, int sizeY) {
-        float distance = pastTime != 0 ? velocity * GRAVITY * (float) (System.currentTimeMillis() - pastTime) / 10 : velocity * GRAVITY;
+        moveDistance = pastTime != 0 ? velocity * GRAVITY * (float) (System.currentTimeMillis() - pastTime) / 10 : velocity * GRAVITY;
 
-        if (y + distance < sizeY + 20) {
-            y += distance;
+        if (y + moveDistance < sizeY + 20) {
+            y += moveDistance;
             updateGradient();
             return true;
         } else {

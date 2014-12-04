@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.View;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,10 +15,9 @@ import java.util.List;
  */
 public class SnowWindow extends View {
 
-    private static final int frequency = 1000 / 60;
+    private static final int frequency = 1000 / 50;
 
     private List<SnowFlake> mFlakes;
-    private List<SnowFlake> pointsArray = new ArrayList<>();
     private Handler mHandler = new Handler();
 
     private long pastTime = 0;
@@ -28,18 +26,13 @@ public class SnowWindow extends View {
     private final Runnable mAnimatorRunnable = new Runnable() {
         @Override
         public void run() {
-            pointsArray.clear();
-            for (SnowFlake flake : mFlakes) {
-                if (flake.moveFlake(pastTime, sizeY)) {
-                    pointsArray.add(flake);
-                } else {
-                    pointsArray.add(new SnowFlake((float) Math.random() * sizeX, -20, flake.distance));
+            for (int i = 0; i < mFlakes.size(); i++) {
+                if (!mFlakes.get(i).moveFlake(pastTime, sizeY)) {
+                    mFlakes.set(i, new SnowFlake((float) Math.random() * sizeX, -20, mFlakes.get(i).distance));
                 }
             }
 
             pastTime = System.currentTimeMillis();
-            mFlakes.clear();
-            mFlakes.addAll(pointsArray);
             invalidate();
 
             mHandler.postDelayed(mAnimatorRunnable, frequency);

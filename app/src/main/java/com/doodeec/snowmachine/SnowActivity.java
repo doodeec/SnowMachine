@@ -28,10 +28,11 @@ public class SnowActivity extends ActionBarActivity {
         List<SnowFlake> mFlakes = new ArrayList<>();
         for (int k = 0; k < 100; k++) {
             //big flakes
-            mFlakes.add(new SnowFlake((float) Math.random() * sizeX, (float) Math.random() * sizeY, (float) (3 + Math.random() * 2)));
+            mFlakes.add(new SnowFlake((float) Math.random() * sizeX, (float) Math.random() * sizeY, (float) (7 + Math.random() * 2)));
             //medium flakes
-            mFlakes.add(new SnowFlake((float) Math.random() * sizeX, (float) Math.random() * sizeY, (float) (1 + Math.random() * 2)));
+            mFlakes.add(new SnowFlake((float) Math.random() * sizeX, (float) Math.random() * sizeY, (float) (3 + Math.random() * 2)));
             //tiny flakes
+            mFlakes.add(new SnowFlake((float) Math.random() * sizeX, (float) Math.random() * sizeY, (float) (1 + Math.random() * 2)));
             mFlakes.add(new SnowFlake((float) Math.random() * sizeX, (float) Math.random() * sizeY, (float) (1 + Math.random() * 2)));
         }
 
