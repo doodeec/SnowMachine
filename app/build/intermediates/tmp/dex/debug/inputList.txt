@@ -1,5 +1,0 @@
-C:\Projects\SnowMachineDroid\app\build\intermediates\classes\debug
-C:\Projects\SnowMachineDroid\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-901174069a395c9186a55c2ec0ff2d0d73d7058e.jar
-C:\Projects\SnowMachineDroid\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-a1d208f15e3b5fdb520d77ce1c0e63bb47b3a530.jar
-C:\Projects\SnowMachineDroid\app\build\intermediates\pre-dexed\debug\classes-a19167f0fa71511f9762d88ac53bc7c3615c51c9.jar
-C:\Projects\SnowMachineDroid\app\build\intermediates\pre-dexed\debug\classes-94575861430950e341c267eb54efc3c3c7b4251a.jar
