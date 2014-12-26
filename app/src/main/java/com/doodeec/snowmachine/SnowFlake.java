@@ -21,7 +21,7 @@ public class SnowFlake {
     public float velocity;
     public Paint paint = new Paint();
 
-    // not waiting for GC to throw unused local variables
+    // reusing, not waiting for GC to throw unused local variables
     private float moveDistance;
 
     public SnowFlake(float x, float y, float distance) {
